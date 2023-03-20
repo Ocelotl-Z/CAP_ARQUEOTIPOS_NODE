@@ -1,0 +1,489 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "User API",
+    "version": "1.0.0",
+    "description": "Microservice User API"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:9100"
+    }
+  ],
+  "apis": [
+    "E:\\RESPALDO NV2\\axity\\TAREAS\\NodeArqueotipos\\user-service\\src\\**\\**\\*.ts"
+  ],
+  "paths": {
+    "/roles": {
+      "get": {
+        "description": "Get all Roles",
+        "tags": [
+          "Roles"
+        ],
+        "responses": {
+          "200": {
+            "description": "All Roles",
+            "content": {
+              "appication/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleTo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error bad parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorTo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "create ROLES",
+        "tags": [
+          "Roles"
+        ],
+        "requestBody": {
+          "description": "Object of Role",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleTo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "All Roles",
+            "content": {
+              "appication/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleTo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error bad parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorTo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/roles/{id}": {
+      "get": {
+        "description": "Get one role by id",
+        "tags": [
+          "Roles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Role ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "One Role",
+            "content": {
+              "appication/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleTo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error bad parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorTo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "description": "Patch role",
+        "tags": [
+          "Roles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Role ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of Role",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleTo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "One Role",
+            "content": {
+              "appication/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleTo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error bad parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorTo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Update role",
+        "tags": [
+          "Roles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Role ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of Role",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleTo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "One Role",
+            "content": {
+              "appication/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleTo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error bad parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorTo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete one role by id",
+        "tags": [
+          "Roles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Role ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Role deleted",
+            "content": {
+              "appication/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleTo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error bad parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorTo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/roles/ping": {
+      "get": {
+        "description": "Test service",
+        "tags": [
+          "Roles"
+        ],
+        "responses": {
+          "200": {
+            "description": "Pong",
+            "content": {
+              "appication/json": {
+                "example": {
+                  "status": 200,
+                  "message": "pong"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "description": "Get all Users",
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "All Users",
+            "content": {
+              "appication/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserTo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error bad parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorTo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "create USERS",
+        "tags": [
+          "Users"
+        ],
+        "requestBody": {
+          "description": "Object of User",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserTo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "All Users",
+            "content": {
+              "appication/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserTo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error bad parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorTo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "delete": {
+        "description": "delete USERS",
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All Users",
+            "content": {
+              "appication/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserTo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error bad parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorTo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/ping": {
+      "get": {
+        "description": "Test service",
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "Pong",
+            "content": {
+              "appication/json": {
+                "example": {
+                  "status": 200,
+                  "message": "pong"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ErrorTo": {
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "type": "string",
+            "description": "Código de error de negocio",
+            "example": 10
+          },
+          "errorMessage": {
+            "type": "string",
+            "description": "Error de sistema",
+            "example": "Null pointer"
+          },
+          "userError": {
+            "type": "string",
+            "description": "Human readable error",
+            "example": "No se encontró información"
+          },
+          "info": {
+            "type": "string",
+            "description": "Información sobre solución del error",
+            "example": "http://info.com"
+          }
+        }
+      },
+      "RoleTo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "description": "id of role",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "description": "name of role",
+            "example": "Admin"
+          }
+        }
+      },
+      "UserTo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "description": "id of user",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "description": "name of user",
+            "example": "Erick"
+          },
+          "email": {
+            "type": "string",
+            "description": "email of user",
+            "example": "some@gmail.com"
+          }
+        }
+      }
+    }
+  },
+  "tags": []
+}
